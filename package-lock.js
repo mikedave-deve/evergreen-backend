@@ -18,7 +18,7 @@
         "nodemon": "^3.1.0"
       },
       "engines": {
-        "node": ">=18"
+        "node": ">=24"
       }
     },
     "node_modules/accepts": {
@@ -117,7 +117,7 @@
         "balanced-match": "^4.0.2"
       },
       "engines": {
-        "node": "18 || 20 || >=22"
+        "node": "24 || 20 || >=22"
       }
     },
     "node_modules/braces": {
