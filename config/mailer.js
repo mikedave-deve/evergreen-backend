@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 async function verifyMailer() {
   try {
     await transporter.verify()
-    console.log('✅  SMTP connection verified')
+    console.log('✅  SMTP connection   verified')
   } catch (err) {
     console.error('❌  SMTP connection failed:', err.message)
     // Don't crash the server — the error will surface on the first send attempt
