@@ -53,4 +53,27 @@ function validateResume({ firstName, lastName, email, industry, file }) {
   return errors
 }
 
-module.exports = { validateContact, validateResume }
+// ── Apply Now form ───────────────────────────────────────────────────────────
+function validateApply({ fullName, email, phone, dob, address, jobPosition, availability, workDuration }) {
+  const errors = []
+
+  const checks = [
+    required(fullName,      'Full name'),
+    required(phone,         'Phone number'),
+    required(dob,           'Date of birth'),
+    required(address,       'Home address'),
+    required(jobPosition,   'Job position'),
+    required(availability,  'Availability'),
+    required(workDuration,  'Work duration'),
+  ]
+
+  checks.forEach((e) => { if (e) errors.push(e) })
+
+  if (!email || !isValidEmail(email)) {
+    errors.push('A valid email address is required.')
+  }
+
+  return errors
+}
+
+module.exports = { validateContact, validateResume, validateApply }

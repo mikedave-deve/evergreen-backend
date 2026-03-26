@@ -4,6 +4,7 @@ const express          = require('express')
 const { verifyMailer } = require('./config/mailer')
 const contactRoute     = require('./routes/contact')
 const resumeRoute      = require('./routes/resume')
+const applyRoute       = require('./routes/apply')
 
 const app = express()
 
@@ -28,6 +29,7 @@ app.get('/api/health', (_req, res) => {
 
 app.use('/api/contact', contactRoute)
 app.use('/api/resume',  resumeRoute)
+app.use('/api/apply',   applyRoute)
 
 // ── 404 ────────────────────────────────────────────────────────────────────────
 app.use((_req, res) => {
